@@ -24,8 +24,8 @@ function numberGenerator(num) {
 
 btn.addEventListener("click", function() {
     boxGenerator("box", 5, numbers);
-    setTimeout(hide, 29.5 * 1000);
-    setTimeout(timer, 30 * 1000);
+    setTimeout(hide, 30 * 1000);
+    setTimeout(timer, 31 * 1000);
 })
 
 function hide() {
