@@ -1,5 +1,7 @@
 let containerNum = document.getElementById("containerNumbers");
 const numbers = numberGenerator(5);
+let cronometro;
+let time = 30;
 
 function boxGenerator(classe, numBox) {
     containerNum.innerHTML = "";
@@ -10,6 +12,8 @@ function boxGenerator(classe, numBox) {
         box.innerText = numbers[i];
     }
 }
+
+
 
 function numberGenerator(num) {
     const numbers = [];
@@ -26,7 +30,15 @@ btn.addEventListener("click", function() {
     boxGenerator("box", 5, numbers);
     setTimeout(hide, 30 * 1000);
     setTimeout(timer, 31 * 1000);
-})
+    cronometro = setInterval(function() {
+        if(time == 0) {
+            clearInterval(cronometro);
+        } else {
+            time--;
+            document.getElementById("time").innerText = time;
+        }
+    }, 1 * 1000);
+});
 
 function hide() {
     const boxes = document.querySelectorAll(".box");
